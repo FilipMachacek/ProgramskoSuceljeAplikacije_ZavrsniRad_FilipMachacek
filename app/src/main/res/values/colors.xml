@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="elegant_grey">#F8F9FA</color>
+    <color name="dark_grey">#212529</color>
+    <color name="status_connected">#28A745</color>
+    <color name="status_disconnected">#DC3545</color>
+    <color name="border_color">#DEE2E6</color>
+</resources>

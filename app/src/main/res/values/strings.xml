@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Robotski Kontroler</string>
+    <string name="robot_title">KONTROLER</string>
+    <string name="connect_btn">POVEŽI SE NA HC-05</string>
+    <string name="exit_btn">UGASI APLIKACIJU</string>
+    <string name="status_disconnected">SUSTAV SPREMAN</string>
+    <string name="status_connecting">USPOSTAVLJANJE VEZE...</string>
+    <string name="status_connected">VEZA AKTIVNA</string>
+    <string name="status_error">VEZA NEUSPJEŠNA</string>
+    <string name="status_lost">VEZA PREKINUTA</string>
+    <string name="pid_settings">PODEŠAVANJE BALANSA (PID)</string>
+    <string name="hint_p">P</string>
+    <string name="hint_i">I</string>
+    <string name="hint_d">D</string>
+    <string name="send_pid_btn">PRIMIJENI PARAMETRE</string>
+    <string name="height_title">VISINA POLOŽAJA</string>
+    <string name="kut_format">Položaj: %d°</string>
+    <string name="bluetooth_not_supported">BLUETOOTH NIJE DOSTUPAN</string>
+    <string name="fill_pid_fields">POPUNITE SVE PARAMETRE</string>
+    <string name="pid_sent">PID PARAMETRI POSLANI</string>
+    <string name="not_connected">OFFLINE</string>
+    <string name="check_robot_toast">PROVJERITE HARDVERSKU VEZU</string>
+    <string name="control_panel">KOMANDNI CENTAR</string>
+    <string name="movement_label">NAVIGACIJA</string>
+    <string name="stance_label">PREDEFINIRANI POLOŽAJI</string>
+    <string name="link_active">VEZA AKTIVNA</string>
+    <string name="start_balancing_btn">POKRENI BALANSIRANJE</string>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/layoutConnect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <ImageView
+            android:id="@+id/imgRobot"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_robot"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="@string/robot_title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/connect_btn"
+            android:textColor="@color/black"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnExit"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/exit_btn"
+            android:textColor="@color/black"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/status_disconnected"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <ScrollView android:id="@+id/layoutControl" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+                <View android:id="@+id/indicatorStatus" android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/circle_status" android:backgroundTint="@color/status_connected" android:layout_marginEnd="6dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/link_active" android:textColor="@color/status_connected" android:textSize="10sp" android:textStyle="bold"/>
+            </LinearLayout>
+            <Button android:id="@+id/btnStartBalancing" android:layout_width="match_parent" android:layout_height="60dp" android:layout_marginBottom="20dp" android:text="@string/start_balancing_btn" android:backgroundTint="@color/black" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" app:cornerRadius="16dp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" app:cardBackgroundColor="@color/elegant_grey" app:cardCornerRadius="16dp" app:strokeWidth="1dp" app:strokeColor="@color/border_color" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pid_settings" android:textSize="10sp" android:textStyle="bold" android:layout_marginBottom="8dp" android:textColor="@color/dark_grey"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputLayout style="@style/PidInput" android:hint="P"><com.google.android.material.textfield.TextInputEditText android:id="@+id/editP" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:textColor="@color/black"/></com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout style="@style/PidInput" android:hint="I"><com.google.android.material.textfield.TextInputEditText android:id="@+id/editI" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:textColor="@color/black"/></com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout style="@style/PidInput" android:hint="D" android:layout_marginEnd="0dp"><com.google.android.material.textfield.TextInputEditText android:id="@+id/editD" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:textColor="@color/black"/></com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                    <Button android:id="@+id/btnSendPid" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:text="@string/send_pid_btn" app:cornerRadius="8dp" android:backgroundTint="@color/black" android:textColor="@color/white" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" app:cardBackgroundColor="@color/elegant_grey" app:cardCornerRadius="16dp" app:strokeWidth="1dp" app:strokeColor="@color/border_color" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="KASKADNA REGULACIJA (BRZINA)" android:textSize="10sp" android:textStyle="bold" android:layout_marginBottom="8dp" android:textColor="@color/dark_grey"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputLayout style="@style/PidInput" android:layout_weight="1" android:hint="Kp_v"><com.google.android.material.textfield.TextInputEditText android:id="@+id/editKpV" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:textColor="@color/black"/></com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout style="@style/PidInput" android:layout_weight="1" android:hint="Ki_v" android:layout_marginEnd="0dp"><com.google.android.material.textfield.TextInputEditText android:id="@+id/editKiV" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:textColor="@color/black"/></com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                    <Button android:id="@+id/btnSendCascade" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:text="POŠALJI KASKADU" app:cornerRadius="8dp" android:backgroundTint="@color/black" android:textColor="@color/white" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/movement_label" android:textSize="10sp" android:textStyle="bold" android:layout_marginBottom="8dp" android:textColor="@color/dark_grey"/>
+            <GridLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:columnCount="3" android:rowCount="3" android:layout_marginBottom="20dp">
+                <View android:layout_width="80dp" android:layout_height="80dp" /> <Button android:id="@+id/btnForward" style="@style/ControlBtn" android:text="↑" /> <View android:layout_width="80dp" android:layout_height="80dp" />
+                <Button android:id="@+id/btnLeft" style="@style/ControlBtn" android:text="←" /> <Button android:id="@+id/btnStop" style="@style/ControlBtn" android:text="■" android:backgroundTint="#FF0000" /> <Button android:id="@+id/btnRight" style="@style/ControlBtn" android:text="→" />
+                <View android:layout_width="80dp" android:layout_height="80dp" /> <Button android:id="@+id/btnBackward" style="@style/ControlBtn" android:text="↓" />
+            </GridLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stance_label" android:textSize="10sp" android:textStyle="bold" android:layout_marginBottom="8dp" android:textColor="@color/dark_grey"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+                <Button android:id="@+id/btnSquat" style="@style/StanceBtn" android:text="Č" /> <Button android:id="@+id/btnNormal" style="@style/StanceBtn" android:text="N" /> <Button android:id="@+id/btnStand" style="@style/StanceBtn" android:text="S" android:layout_marginEnd="0dp" />
+            </LinearLayout>
+            <TextView android:id="@+id/txtAngle" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAlignment="center" android:text="Položaj: NORMALAN (80°)" android:textColor="@color/black" android:textStyle="bold" android:textSize="14sp" android:background="@color/elegant_grey" android:padding="12dp"/>
+
+            <com.example.kontroler_robota.RealTimeGraph
+                android:id="@+id/realTimeGraph"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/elegant_grey" />
+
+            <SeekBar android:id="@+id/seekBarHeight" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
